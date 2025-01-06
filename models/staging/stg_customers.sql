@@ -1,10 +1,6 @@
 with source as (
 
-    {#-
-    Normally we would select from the table here, but we are using seeds to load
-    our data in this project
-    #}
-    select * from {{ ref('raw_customers') }}
+    select * from {{ ref('raw_cus') }}
 
 ),
 
@@ -12,11 +8,20 @@ renamed as (
 
     select
         id as customer_id,
-        first_name,
-        last_name
+
+        cus_name as name_first,
+        surname as name_last,
+
+        addr_line as address_1,
+        addr_line2 as address_2,
+        city as city,
+        state as state_code,
+        postal::varchar as zip_code,
+
+        account_identifier as email,
+        {{ scrub_phone_number("cell") }} as phone1
 
     from source
-
 )
 
 select * from renamed

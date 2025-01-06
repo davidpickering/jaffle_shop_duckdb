@@ -1,3 +1,4 @@
 [sqlfluff]
 
 dialect = ansi
+ignore = templating
