@@ -44,7 +44,7 @@ models:
         tests:
           - not_null
           - relationships:
-              to: ref('customers')
+              to: ref('dim_customers')
               field: customer_id
 
       - name: order_date
@@ -79,4 +79,13 @@ models:
       - name: gift_card_amount
         description: Amount of the order (AUD) paid for by gift card
         tests:
+          - not_null
+
+  - name: customers_finance
+    description: Derivative of warehouse.dim_customers to be used by finance department
+    columns:
+      - name: customer_id
+        description: Primary key for table, uniquely identifiers a customer.
+        data_tests:
+          - unique
           - not_null

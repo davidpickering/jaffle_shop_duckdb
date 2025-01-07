@@ -45,6 +45,8 @@ final as (
         customers.customer_id,
         customers.name_first,
         customers.name_last,
+        -- add fields from staging model (addresses)
+        -- add fields from staging model (contact information)
         customer_orders.first_order,
         customer_orders.most_recent_order,
         customer_orders.number_of_orders,
