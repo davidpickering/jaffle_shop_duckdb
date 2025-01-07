@@ -56,7 +56,7 @@ final as (
         on customers.customer_id = customer_orders.customer_id
 
     left join customer_payments
-        on  customers.customer_id = customer_payments.customer_id
+        on customers.customer_id = customer_payments.customer_id
 
 )
 
