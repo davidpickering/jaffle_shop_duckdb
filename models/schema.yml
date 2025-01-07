@@ -89,3 +89,12 @@ models:
         data_tests:
           - unique
           - not_null
+
+  - name: customers_logistics
+    description: Derivative of warehouse.dim_customers to be used by logistics department
+    columns:
+      - name: customer_id
+        description: Primary key for table, uniquely identifiers a customer.
+        data_tests:
+          - unique
+          - not_null
