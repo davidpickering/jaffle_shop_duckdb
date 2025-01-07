@@ -13,7 +13,7 @@ final as (
         customers.first_order,
         customers.most_recent_order,
         customers.number_of_orders,
-        customers.total_amount as customer_lifetime_value
+        customers.customer_lifetime_value
 
     from customers
 
