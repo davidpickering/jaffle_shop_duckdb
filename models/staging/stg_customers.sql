@@ -14,7 +14,7 @@ renamed as (
 
         addr_line as address_1,
         addr_line2 as address_2,
-        city as city,
+        {{ standardize_address_city("city") }} as city,
         state as state_code,
         postal::varchar as zip_code,
 
